@@ -18,10 +18,10 @@
   "require-dev": {
   },
   "autoload": {
-    "psr-4": { "Dubiy\\Yamlok\\": "src/Dubiy/Yamlok" }
+    "psr-4": { "Dubiy\\YamlokBundle\\": "src/Dubiy/YamlokBundle" }
   },
   "autoload-dev": {
-    "psr-4": { "Dubiy\\Yamlok\\": "src/Dubiy/Yamlok" }
+    "psr-4": { "Dubiy\\YamlokBundle\\": "src/Dubiy/YamlokBundle" }
   }
 }
 
