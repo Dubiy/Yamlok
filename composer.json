@@ -1,8 +1,27 @@
 {
   "name": "dubiy/yamlok",
-  "autoload": {
-    "psr-0" : {
-      "Dubiy\\Yamlok" : "src"
+  "type": "symfony-bundle",
+  "description": "Yaml file editor",
+  "keywords": ["symfony", "yaml", "file", "settings", "options", "store"],
+  "require": {
+    "php": ">=5.4.0",
+    "symfony/symfony": "~2.3"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Igor Dubiy",
+      "email": "netzver@gmail.com"
     }
+  ],
+  "minimum-stability": "stable",
+  "require-dev": {
+  },
+  "autoload": {
+    "psr-4": { "Dubiy\\Yamlok\\": "src/Dubiy/Yamlok" }
+  },
+  "autoload-dev": {
+    "psr-4": { "Dubiy\\Yamlok\\": "src/Dubiy/Yamlok" }
   }
 }
+
