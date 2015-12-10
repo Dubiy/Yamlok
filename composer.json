@@ -1,0 +1,8 @@
+{
+  "name": "dubiy/yamlok",
+  "autoload": {
+    "psr-0" : {
+      "Dubiy\\Yamlok" : "src"
+    }
+  }
+}
