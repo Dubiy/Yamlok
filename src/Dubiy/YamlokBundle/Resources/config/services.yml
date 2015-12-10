@@ -1,0 +1,8 @@
+parameters:
+    dubiy_yamlok.path: ''
+
+services:
+    dubiy_yamlok.yaml:
+        class: Dubiy\YamlokBundle\Service\Yamlok
+        arguments:
+          - "%dubiy_yamlok.path%"

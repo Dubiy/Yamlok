@@ -1,6 +1,6 @@
 <?php
 
-namespace Dubiy\Yamlok;
+namespace Dubiy\YamlokBundle\Service;
 
 
 class Yamlok
