@@ -6,5 +6,7 @@ services:
         class: Dubiy\YamlokBundle\Service\Yamlok
         arguments:
           - "%dubiy_yamlok.path%"
+          - @kernel
           - @form.factory
           - @session
+

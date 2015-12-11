@@ -3,6 +3,7 @@
 namespace Dubiy\YamlokBundle\Service;
 
 
+use AppKernel;
 use Dubiy\YamlokBundle\Form\YamlType;
 use Dubiy\YamlokBundle\Model\Yaml;
 use Symfony\Component\Form\FormFactory;
@@ -15,6 +16,7 @@ class Yamlok
     private $data = [];
     private $yaml = [];
     private $indent = 0;
+    private $kernel;
     private $formFactory;
     private $session;
 
@@ -24,9 +26,10 @@ class Yamlok
     /**
      * @param string $path
      */
-    public function __construct($path = '', FormFactory $formFactory, Session $session)
+    public function __construct($path = '', AppKernel $kernel, FormFactory $formFactory, Session $session)
     {
         $this->path = $path;
+        $this->kernel = $kernel;
         $this->formFactory = $formFactory;
         $this->session = $session;
     }
@@ -45,6 +48,16 @@ class Yamlok
             $this->toFile();
             $this->session->getFlashBag()->add('success', 'Config successfully saved');
             //TODO: reset cache
+
+            $kernel = $this->kernel;
+//            register_shutdown_function(function() use ($kernel) {
+                $input = new \Symfony\Component\Console\Input\ArgvInput(array('console','cache:clear -e prod'));
+                $application = new \Symfony\Bundle\FrameworkBundle\Console\Application($kernel);
+                $application->run($input);
+//            });
+
+
+
         }
         return $form;
     }
