@@ -16,9 +16,22 @@ class Yaml
      * Yaml constructor.
      * @param array $data
      */
-    public function __construct(array $data)
+    public function __construct(array $data = [])
+    {
+        $this->setData($data);
+    }
+
+    public function setData(array $data = [])
     {
         $this->data = $data;
+        foreach ($this->data as $key => $value) {
+            $this->$key = &$this->data[$key];
+        }
+    }
+
+    public function getData()
+    {
+        return $this->data;
     }
 
     function __call($func, $params){
@@ -35,5 +48,6 @@ class Yaml
             $key = strtolower(substr($func, 3));
             return $this->data[$key] = $params[0];
         }
+        return null;
     }
 }

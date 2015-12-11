@@ -23,9 +23,7 @@ class YamlType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         foreach ($this->data as $key => $value) {
-            $builder->add($key, 'text', [
-                'mapped' => null
-            ]);
+            $builder->add($key, 'text');
         }
         $builder->add('sumbit', 'submit');
     }
